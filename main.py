@@ -1,8 +1,5 @@
 from sympy import Symbol
-import pickle
-
-with open('functions.pickle', 'rb') as handle:
-    test_function_list = pickle.load(handle)
+from tests import generate_test_functions
 
 
 def derivative(function, variable):
@@ -15,6 +12,9 @@ def integrate(function, variable):
 
 X = Symbol("x")
 Y = Symbol("y")
+
+test_list_width = 10
+test_function_list = generate_test_functions(test_list_width)
 
 print("-=" * 50)
 print("DERIVADAS:")
